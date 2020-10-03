@@ -85,22 +85,22 @@
                         <div class="BBQuantityOption">
                             <div class="BBQuantityOptionWrapper">
                                 <input type="radio" id="radio1" name="radioQuantity" value="1" checked>
-                                <label for="radioApple">1</label>
+                                <label for="radioApple">1 ($1.75)</label>
                             </div>
 
                             <div class="BBQuantityOptionWrapper">
                                 <input type="radio" id="radio3" name="radioQuantity" value="3">
-                                <label for="radioBanana">3</label>
+                                <label for="radioBanana">3 ($5.25)</label>
                             </div>
 
                             <div class="BBQuantityOptionWrapper">
                                 <input type="radio" id="radio6" name="radioQuantity" value="6">
-                                <label for="radioOrange">6</label> 
+                                <label for="radioOrange">6 ($10.50)</label> 
                             </div>
 
                             <div class="BBQuantityOptionWrapper">
                                 <input type="radio" id="radio12" name="radioQuantity" value="12">
-                                <label for="radioOrange">12</label>
+                                <label for="radioOrange">12 ($21.00)</label>
                             </div>
                         </div>
                     </div>
@@ -141,16 +141,18 @@
                 <li>
                     <div class="BBReviewSubmit">
                         <h2>Submit a Review Here</h2>
-                        <label for="reviewer"><h3 class="BBReviewLabel">Reviewer Name: </h3></label>
-                        <input type="text" id="reviewer" name="reviewer" value="" checked>
-                        <br>
+                        <form>
+                            <label for="reviewer"><h3 class="BBReviewLabel">Reviewer Name: </h3></label>
+                            <input type="text" pattern="^[a-zA-Z\s]*$" oninvalid="setCustomValidity('Enter a name with letters and whitespaces only');"  oninput="setCustomValidity('');" class="BBTextInput" id="reviewer" name="reviewer" value="" required>
+                            <br>
 
-                        <label for="review"><h3 class="BBReviewLabel">Review:</h3></label>
-                        <textarea id="review" name="review" style="width: 100%; min-height: 20vh"></textarea>
-                        <br>
-                        <br>
+                            <label for="review"><h3 class="BBReviewLabel">Review:</h3></label>
+                            <textarea id="review" pattern="^[a-zA-Z\s]*$" oninvalid="setCustomValidity('You must enter a review');"  oninput="setCustomValidity('');" name="review" style="width: 100%; min-height: 20vh" required></textarea>
+                            <br>
+                            <br>
 
-                        <button class="BBAddButton">SUBMIT REVIEW</button>
+                            <input type="submit" class="BBAddButton" value="SUBMIT REVIEW">
+                        </form>
                     </div>
                 </li>
             </ul>

@@ -15,7 +15,7 @@ body {
     background-color: #FCF5CE;
 }
 
-button {
+button, input {
     border: none;
     outline: none;
     background: none;
@@ -111,11 +111,60 @@ ul {
     z-index: -1;
 }
 
+.BBHomeIntroWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+    width: 100%;
+    padding: 30vh 10em;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBIntroInstructions {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 3em;
+    padding: 2em;
+    grid-column-start: 2;
+}
+
+.BBIntroTitle {
+    color: white;
+    letter-spacing: 0em;
+    text-align: start;
+}
+
+.BBIntroDesc {
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 2em;
+}
+
+.BBIntroLinkWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2em;
+    gap: 0em;
+}
+
+.BBIntroLink, .BBIntroLink:visited {
+    color:  rgba(255, 255, 255, 0.5);
+}
+
+.BBIntroLink:hover {
+    color: #FF5500;
+}
+
 /* PRODUCTS */
+.BBProductBody {
+    padding: 5%;
+    margin-top: 15vh;
+}
+
 .BBProductWrapper {
     background-color: #FCF5CE;
-    padding: 5%;
-    margin-top: 30vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
@@ -440,4 +489,16 @@ svg {
 
 .CartFill:hover {
     fill: white;
+}
+
+.BBTextInput {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.BBTextInput:focus {
+    border-width: 2px;
+    border-color: black;
 }
