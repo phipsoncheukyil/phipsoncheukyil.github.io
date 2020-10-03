@@ -1,0 +1,443 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body, html, div, img {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FCF5CE;
+}
+
+button {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #FF5500;
+}
+
+h2 {
+    font-size: 2em;
+    letter-spacing: 0.05em;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.BBMenuWrapper {
+    position: fixed;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr;
+    padding: 0.5% 2%;
+    gap: 2.5%;
+    background-color: #FFBF80;
+    top: 0;
+    z-index: 1;
+}
+
+.BBMenuLogo {
+    width: 200px;
+}
+
+.BBImg {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    padding: 10%;
+}
+
+.BBMenuNav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2.5%;
+}
+
+.BBMenuNavLinkFirst {
+    grid-column-start: 5;
+}
+
+.BBMenuNavItem, .BBMenuNavItem:link, .BBMenuNavItem:visited {
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #FF5500;
+}
+
+.BBMenuNavItem:hover {
+    color: #FFFFFF;
+}
+
+/* HOME */
+.BBHomeParallax {
+    /* The image used */
+    background-image: url("https://s3-alpha-sig.figma.com/img/aae5/995e/4d80522bac0e3957e2a913c18e41515a?Expires=1601856000&Signature=Piq98Gl6519qSvLeBorfhGS9dL8UAtr-kisjBRY~5WB4m0kwwEmFW1IiC7qOGs~BpGhwyzsrYmR4hx504hprAgsCgfyrtHabwnzcVmJxUIGM8qFaHRb4yKrdcGvxHuzxBT8UcYnKyDos8BpXi7mp4D0~0HEF0HuSNrHCYs~ilIKn18~6b4RTOGyy2QfQK70WQkAhGEkLs2lf8stfdNFcSjSeW~Wk4CrKUF8uUJ2b4m~kWnrVgfnEjOvKuBtHM~k9gX987iY8o3cPgBaWSuZI~ORFcBSxVPUsSb-bbae8Nqm55JhevAegsgmdkqTobNLIW9UQwCbSYwtlnp1maU6A3A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+
+    /* Set a specific height */
+    height: 100vh;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -1;
+}
+
+/* PRODUCTS */
+.BBProductWrapper {
+    background-color: #FCF5CE;
+    padding: 5%;
+    margin-top: 30vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3em;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBProductItem {
+    border-radius: 1em;
+    background-color:  rgba(255, 165, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.BBProductItem:hover {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+.BBProductImg, .BBItemImg {
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BBProductText {
+    padding: 1.5em;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.5em;
+}
+
+.BBProductName, .BBProductPrice {
+    color: #FF5500;
+}
+
+.BBProductName {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.BBProductPrice {
+    font-weight: 500;
+}
+
+#original {
+    background-image: url("https://s3-alpha-sig.figma.com/img/8782/9c31/2c6169c75afb5d58908fbcf5a34c075f?Expires=1601856000&Signature=T6PZ-75gq9CnBk6bFI0GUJU8GjLlZkpPfuuiPMnWkgB0l4Nrsm91FK51UnjIGtwvxMDVcSCUNuTRxAhEJCwcFsikXbwIlekZ1m-xPwGmuCD29ezyQEVZu6dgfcMYwrT3ecMisp4UnRh2LMdfE80x9QISl2Dtbxe9IwGsSxYbtA1HiEESQjh9ZWaGlt2Qf976Tlvtld9uacY9hi4V7PR9BXPBzpK34vURrBotoT~BYohNP9RkPVMJhMMet-vMJuPiir0mRrWtsZx7R4RoDIXCfnGldOxa41Pgq2CBqtBbwzcZXXYc5l4wVGz0~Bxjd9P2XhgZp2OI3shtY0yafEqJ2Q__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#gluten-free {
+    background-image: url("https://s3-alpha-sig.figma.com/img/0ee0/fa1d/f195e3b813babeb5e2cbe9f6f0731c99?Expires=1601856000&Signature=c8JhLYKj1tNhmmrOsoEFDcPhKK9Avkc-82FCGw4aX9sder5OJfYgaELHiTSHHAr6dKKIZqmAiquA9MRDfW8vXv~Z5PDUw~Q7kEJE87nUO6OqyY5BZdvpMvV0v2jQIEzRURw1SxEdyCPd2FjBSE1dFifJS1vNZPmqtvukMMZor53NOOv-GgzXJPRougpy6dRosSyxETC-pSmt6bimnuVYseahbigMNEBcgdSeOo~N3Q~yBkjpMCOsT58wZVGhZkz5PqE-Ra--Gnt62ZiWBHRFcOLdFTAQxiLqOxgpCOmcXp7JadUqY~Ie-3FhHD5OIH9UoIIi1g3oE2A4r4mIhLY0Fg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#blackberry {
+    background-image: url("https://s3-alpha-sig.figma.com/img/cf84/c8f0/f001f32707aa6d363c63c4973f9fa913?Expires=1601856000&Signature=VYVseX~pWdfHIox4P8p6xeLXB6ffqNsVsYVJkxxL-J~jszAhTtiyZ-WxyOc~ipKNtufHIUvhrwp6-dheDnZtOCQhwIYYlOTnKz1vX0yoJ5BJ7qlTTmXezePQtgsdtSxV2~tvMrIPDVjPrySq5vTfpO2lE5xM1QlOkrgpLtk4Tkh-6I1B~ZN41cT-SRUYV~J8qO78dAMr2D2KJYsTDtOA~sdehS1loRi9vUDHR6TTLF669MHrx307p-BElYEHO0xeZa40o3-Wx00de0hrqiVBEL6kZJ5sf9bPGNNmkWGCXQQtjte8taTlzk6Sd1lVxfmyp0V-dBZCb5-uh~uSKusNGg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#walnut {
+    background-image: url("https://s3-alpha-sig.figma.com/img/cafd/2180/bf67426bc3e3bba1b77cdaa7ee829af8?Expires=1601856000&Signature=cNFyIfVxpOOuG6wAUpGwuNAQHdZDHJWRNoEhtAb2CbKOf7RY61GwoBQDBpNvIyRoUyW1oIrP58DrAc6BE4bJm8LDfP0urowtgcioYi6cnKDiBVPIzewUGDsfrlJkGTePSZ8ahxI6lr61fClwkpSzH1R~5QYXjm1dWKVdM4~w2rMCIdoHgCtnpS12v5tTe6Ahc05-xa0K-c7DZ-XJFGbbblx9WpPuIlx8eY8iXnWwA7A5tJZFumT9Q7mcnrlmBsbcJxompwxhLz5Slmz8D51UYffDHB7Rre~84O1gbXkv8Clj5hLRm0Tn2j1KagTXJZ0on1unCffcVV8ztHHRwULbOg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#caramel-pecan {
+    background-image: url("https://s3-alpha-sig.figma.com/img/5ef5/04e8/68512789c58adac9cdff2c7bffceecbb?Expires=1601856000&Signature=YZdL~oVvCIQurY0~pRHkBOwuMtIWk8cKdg22bYpocmCLsLD1W-rZlHN4njPNThgwH8THJB0MflaRWH21rjC3rpIqg~zENJaEe7auk5Uj7s80US-3HfMyTBzAfPcxSTsHEoz5LYOdQhq~ALQnRGUW0YBDX7RbNX4CmxZtioRDgWJXpmaEBz33IL-MXXA61kwsdkRR5o55pe24oqu9DOfPcflSJfHsTUfnrUWDhvbMDUUzzqlshJdApaGMB6hwdVMQWnMeqhHYiRJ49E7sNJm2ee6nBICWdq-SdL-YtMOJ2cnlXgmvG5mG~JSkkKsg7PzYXMjiLQKjQRP2LuvnRgzvYA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#pumpkin-spice {
+    background-image: url("https://s3-alpha-sig.figma.com/img/7d0b/59d1/92b18e5b92ea9ee793545c6e65da2217?Expires=1601856000&Signature=NsDv8LM2JjJOP9OY92vdtNxjEtRfvNz~P4QAvAYJWlxlcyRcdk6Drch4VSCeBTv8CWozNJHrBKeEem7qQC-HIqFhWJh663pkEz-Nc4AWx1--M~jc7YzWifItXaDGrYbytIupRlLkynTi6rubDBcIeIdGpbqlHW4z73o3XHbM7dKGquFosAaa0L~8h06RLoH7k-OhwL3ScIIwuSNO~wW7l2cJUqN~tRBbstRctIpOBZDQcEmPM9LBzM3KPYCxc6cfK5Vtwf7h1J29FfKrWwqSQ8a2EE6szIcw5LMdYW1chQc-WOwY30zA69~Fp0zFcQhmynfTP60w4S07H2BnmOJLfw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+/* ABOUT */
+.BBAboutWrapper {
+    background-color: #FCF5CE;
+    padding: 5%;
+    margin-top: 30vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10em;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBAbout {
+    padding: 0 3em;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 5em;
+}
+
+#BBAbout1 {
+    grid-template-columns: 2fr 1fr;
+}
+
+.BBAboutImg {
+    border-radius: 2em;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    min-height: 30vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about-1 {
+    background-image: url("https://s3-alpha-sig.figma.com/img/c759/72ac/858ce558186fedae32123cd7cbe40a5e?Expires=1601856000&Signature=GDVztxAruPN9l-vuIHPibG1eHtY3qLjUaO--GrZGJmTGhW0zLqxQkHsce9Sck~WX23HqrdgEWuB5fzMBbOpsVPjDNtfXVk2BLUxSefSYJRMy8-wvr9OGL2Ppq9MjoHRbiSYj4GDFeKj4nGKJaUNNily7GtPcHcM1YF4MY5563HW5wt7k1cXfnLKLPHsvhzY8oklFcjfBFzwqbsrTqGjOrmmsPQqQC8PRW6GHvcm8Zmfs5Zz7DHFb13DDX6fuxry3D20Nj4GD9Kww6R7iQF8eQK2Uk0tH9ZOSnFC9m-dnCp8v8x4cjH74eI6ehq7eayTWtTo9kkPURAQXX~A3rOrYCw__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#BBAbout2 {
+    grid-template-columns: 1fr 2fr;
+}
+
+#about-2 {
+    background-image: url("https://s3-alpha-sig.figma.com/img/83fd/223e/c86ed0b3e52c6edd92d9d922823899ab?Expires=1601856000&Signature=Brsjej6aPIIQ4-g-JoNt05hdcMq-wC2BC-VNEaXFdvbNiEp6f2fehBpaq2~oSqiPNK7nKASjJrqh6iYg7tz6tsspGSootyBA7erC7eDsTG54~vkl3ElA~baJJ4VDfPgu-ZW-2L0mR0rVtWz0QutDGJXldTGztQv9DthvLomCH8cZEKzBRuKBW6fq~ar~MUFE9w7JnmM~NieTMNnanrgvUYtjjTeRCwMqPGMNtqo0SusP6kJCiigKoVGkcDbwyFGu8NaELenH6nQAgOxoaOTwEyPlN6yKoJGXxyIXzpPafcqRtXLYvnjRK~2ZT2uXkAAlJ8qWx5aT7oMQDWva92a5uQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
+
+#text-2 {
+    text-align: right;
+}
+
+/* PRODUCT DETAILS */
+.BBItemWrapper {
+    background-color: #FCF5CE;
+    margin-top: 20vh;
+    padding-bottom: 10vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5em;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBItemBackButton {
+    width: 100%;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.BBItemDetails {
+    display: grid;
+    width: 100%;
+    padding: 0 15em;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
+.BBItemSpecs {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 2em;
+}
+
+.BBItemImgDesc {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: 1em;
+}
+
+.BBItemImg {
+    min-height: 50vh;
+    border-radius: 1em;
+}
+
+.BBItemOptions {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-content: left;
+}
+
+.BBOptionWrapper {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    align-items: start;
+    justify-content: left;
+}
+
+.BBOptionTitle {
+    font-size: 2em;
+    font-weight: 700;
+    color: orangered;
+    text-align: left;
+    align-self: end;
+    margin: 0;
+}
+
+.BBGlazeOption, .BBQuantityOption {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.BBGlazeOptionWrapper, .BBQuantityOptionWrapper {
+    display: grid;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBGlazeOption div input[type="radio"], .BBQuantityOption div input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1em 0;
+    z-index: 2;
+}
+
+.BBGlazeOption label, .BBQuantityOption label {
+    padding: 1em 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    color:  rgba(255, 70, 0, 0.25);
+    background-color: rgba(255, 165, 0, 0.25);
+    border-radius: 1em;
+}
+
+.BBGlazeOption input[type="radio"]:checked + label, .BBQuantityOption input[type="radio"]:checked + label {
+    color:  rgba(255, 70, 0, 1);
+    background-color: rgba(255, 165, 0, 0.75);
+    font-weight: 800;
+}
+
+.BBGlazeOption input[type="radio"]:focus, .BBGlazeOption label:hover,
+.BBQuantityOption input[type="radio"]:focus, .BBQuantityOption label:hover{
+    color:  rgba(255, 70, 0, 1);
+    background-color: rgba(255, 165, 0, 0.75);
+}
+
+.BBAddButton {
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    background-color: rgb(0, 128, 128, 0.5);
+    color: white;
+    padding: 1em;
+}
+
+.BBAddButton:hover {
+    background-color: rgb(0, 128, 128, 1);
+}
+
+.BBItemReviews {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5em;
+}
+
+.BBReviewTitle {
+    display: grid;
+    grid-template-columns: 10em 10em;
+    grid-template-rows: 1fr;
+    gap: 2em;
+}
+
+.BBReviewLabel {
+    margin: 0;
+    padding: 1em 0;
+}
+
+.BBBackButtonArrow {
+    font-size: 2em; font-weight: 800; text-align: center; cursor: pointer;
+    color: #FF5500;
+}
+
+.BBBackButtonArrow:hover {
+    color: orange;
+}
+
+svg {
+    width: 100%;
+}
+
+.BBCart {
+    max-width: 3em;
+}
+
+.CartFill {
+    fill: #FF5500;
+}
+
+.CartFill:hover {
+    fill: white;
+}
