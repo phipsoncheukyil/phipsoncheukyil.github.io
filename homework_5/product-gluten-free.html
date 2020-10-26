@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<head>
+    <title>Bun Bun Bakery</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <meta charset="UTF-8">
+    <meta property="og:title" content="My Project Portfolio">
+    <meta property="og:site_name" content="Bun Bun Bakery">
+    <meta property="og:image" content="img_sources/preview.jpg">
+    <meta name="image" content="img_sources/preview.jpg">
+    <meta property="og:image:type" content="image/png">
+    <meta name="keywords" content="HTML, CSS, Java, SCSS, Javascript, UCLA, Computer Science, Phipson Lee, Lee Cheuk Yin, Portfolio">
+    <meta name="author" content="Cheuk Yin Phipson Lee (李卓彥)">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- PARALLAX -->
+    <div class="BBBackground"></div>
+
+    <!-- NAVBAR -->
+    <div id="BBMenu" class="BBMenuWrapper">
+        <div id="BBLogo" class="BBMenuLogo">
+            <a href="index.html">
+                <img class="BBImg" src="./img/bunlogo.png" alt="Bun Bun Bakery Logo"/>
+            </a>
+        </div>
+        <div id="BBNav" class="BBMenuNav">
+            <div class="BBMenuNavLinkFirst"><a class="BBMenuNavItem" href="products.html">BUNS</a></div>
+            <div><a class="BBMenuNavItem" href="about.html">ABOUT US</a></div>
+            <div><a class="BBMenuNavItem" href="cart.html">
+                <div>
+                    <svg class="BBCart" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path class="CartFill" fill-rule="evenodd" clip-rule="evenodd" d="M35.0678 22.9425C34.4162 24.1308 33.1512 24.9167 31.7137 24.9167H17.4345L15.3262 28.75H38.3262V32.5833H15.3262C12.4128 32.5833 10.5728 29.4592 11.972 26.8908L14.5595 22.2142L7.6595 7.66668H3.82617V3.83334H10.0937L11.8953 7.66668H40.262C41.7187 7.66668 42.6387 9.23834 41.9295 10.5033L35.0678 22.9425ZM37.0036 11.5H13.7161L18.2586 21.0833H31.7136L37.0036 11.5ZM15.3262 34.5C13.2178 34.5 11.512 36.225 11.512 38.3334C11.512 40.4417 13.2178 42.1667 15.3262 42.1667C17.4345 42.1667 19.1595 40.4417 19.1595 38.3334C19.1595 36.225 17.4345 34.5 15.3262 34.5ZM30.6787 38.3334C30.6787 36.225 32.3845 34.5 34.4928 34.5C36.6012 34.5 38.3262 36.225 38.3262 38.3334C38.3262 40.4417 36.6012 42.1667 34.4928 42.1667C32.3845 42.1667 30.6787 40.4417 30.6787 38.3334Z"/>
+                    </svg>
+                </div>
+                </a></div>
+        </div>
+    </div>
+
+    <!-- PRODUCT LIST -->
+    <div id="BBItems" class="BBItemWrapper">
+        <!-- BACK BUTTON -->
+        <div class="BBItemBackButton">
+            <a href="products.html"><h3 class="BBBackButtonArrow">←</h3></a>
+            <h2 style="text-align: center;width: 100%">GLUTEN-FREE BUNS</h2>
+        </div>
+
+        <!-- ITEM DETAILS -->
+        <div class="BBItemDetails">
+            <div class="BBItemSpecs">
+                <div class="BBItemImgDesc">
+                    <div id="gluten-free" class="BBItemImg"></div>
+                    <div class="BBItemTxt">
+                        Gluten-free buns that retain the same original flavor, dedicated for all the nutritional goodness.
+                    </div>
+                </div>
+
+                <div class="BBItemOptions">
+                    <div class="BBOptionWrapper">
+                        <h3 class="BBOptionTitle">Glaze:</h3>
+                        <div class="BBGlazeOption">
+                            <div class="BBGlazeOptionWrapper">
+                                <input type="radio" id="radioNone" name="radioGlaze" value="none" checked>
+                                <label for="radioApple">None</label>
+                            </div>
+
+                            <div class="BBGlazeOptionWrapper">
+                                <input type="radio" id="radioSugarMilk" name="radioGlaze" value="sugar">
+                                <label for="radioBanana">Sugar-Milk</label>
+                            </div>
+
+                            <div class="BBGlazeOptionWrapper">
+                                <input type="radio" id="radioVanillaMilk" name="radioGlaze" value="vanilla">
+                                <label for="radioOrange">Vanilla-Milk</label> 
+                            </div>
+
+                            <div class="BBGlazeOptionWrapper">
+                                <input type="radio" id="radioDoubleChoco" name="radioGlaze" value="chocolate">
+                                <label for="radioOrange">Double Chocolate</label> 
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="BBOptionWrapper">
+                        <h3 class="BBOptionTitle">Amount:</h3>
+                        <div class="BBQuantityOption">
+                            <div class="BBQuantityOptionWrapper">
+                                <input type="radio" id="radio1" name="radioQuantity" value="1" checked>
+                                <label for="radioApple">1 ($1.75)</label>
+                            </div>
+
+                            <div class="BBQuantityOptionWrapper">
+                                <input type="radio" id="radio3" name="radioQuantity" value="3">
+                                <label for="radioBanana">3 ($5.25)</label>
+                            </div>
+
+                            <div class="BBQuantityOptionWrapper">
+                                <input type="radio" id="radio6" name="radioQuantity" value="6">
+                                <label for="radioOrange">6 ($10.50)</label> 
+                            </div>
+
+                            <div class="BBQuantityOptionWrapper">
+                                <input type="radio" id="radio12" name="radioQuantity" value="12">
+                                <label for="radioOrange">12 ($21.00)</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="BBAddButton">ADD TO CART</button>
+                </div>
+            </div>
+
+            <ul class="BBItemReviews">
+                <h2>Reviews</h2>
+                <li class="BBReview">
+                    <div class="BBReviewTitle">
+                        <h3>Trevor Noah</h3>
+                        <h3>&#10084; &#10084; &#10084; &#10084; &#10084;</h3>
+                    </div>
+                    <div class="BBReviewDesc">
+                        Absolute amazing buns! They were a bit cold when I ate them, but great nonetheless!
+                    </div>
+                </li>
+                <li>
+                    <div class="BBReviewTitle">
+                        <h3>Sarah Han</h3>
+                        <h3>&#10084; &#10084; &#10084; &#10084; &#10084;</h3>
+                    </div>
+                    <div class="BBReviewDesc">
+                        Wow! Who would’ve ever thought that Bun Bun Bakery would sell such amazing pastries and buns. This original bun is fantastic!
+                    </div>
+                </li>
+                <li>
+                    <div class="BBReviewTitle">
+                        <h3>Jenn Palmer</h3>
+                        <h3>&#10084; &#10084; &#10084; &#10084; &#10084;</h3>
+                    </div>
+                    <div class="BBReviewDesc">
+                        A bit dry and the deliveryman who I spoke with was really impolite. An okay bun nonetheless.
+                    </div>
+                </li>
+                <li>
+                    <div class="BBReviewSubmit">
+                        <h2>Submit a Review Here</h2>
+                        <form>
+                            <label for="reviewer"><h3 class="BBReviewLabel">Reviewer Name: </h3></label>
+                            <input type="text" pattern="^[a-zA-Z\s]*$" oninvalid="setCustomValidity('Enter a name with letters and whitespaces only');"  oninput="setCustomValidity('');" class="BBTextInput" id="reviewer" name="reviewer" value="" required>
+                            <br>
+
+                            <label for="review"><h3 class="BBReviewLabel">Review:</h3></label>
+                            <textarea id="review" pattern="^[a-zA-Z\s]*$" oninvalid="setCustomValidity('You must enter a review');"  oninput="setCustomValidity('');" name="review" style="width: 100%; min-height: 20vh" required></textarea>
+                            <br>
+                            <br>
+
+                            <input type="submit" class="BBAddButton" value="SUBMIT REVIEW">
+                        </form>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</body>
