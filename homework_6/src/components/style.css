@@ -1,0 +1,688 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body, html, div, img {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    text-decoration: none;
+    font-size: 100%;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FCF5CE;
+}
+
+button, input {
+    border: none;
+    outline: none;
+    background: none;
+    box-shadow: none;
+}
+
+a, a:link, a:visited {
+    text-decoration: none;
+    color: black;
+    width: 100%;
+    height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #FF5500;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: 500;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.BBMenuWrapper {
+    position: fixed;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 6fr;
+    grid-template-rows: 1fr;
+    padding: 0.5% 2%;
+    gap: 2.5%;
+    background-color: #FFBF80;
+    top: 0;
+    z-index: 1;
+}
+
+.BBMenuLogo {
+    width: 200px;
+    cursor: pointer;
+}
+
+.BBImg {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    padding: 10%;
+}
+
+.BBMenuNav {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr;
+    gap: 2.5%;
+}
+
+.BBMenuNavLinkFirst {
+    grid-column-start: 4;
+}
+
+.BBMenuNavItem, .BBMenuNavItem:link, .BBMenuNavItem:visited {
+    font-weight: 500;
+    font-size: 1.3em;
+    color: #FF5500;
+    cursor: pointer;
+}
+
+.BBMenuNavItem:hover {
+    color: #FFFFFF;
+}
+
+/* HOME */
+.BBHomeParallax {
+    display: block;
+
+    /* The image used */
+    background-image: url("../img/homebg.jpg");
+
+    /* Set a specific height */
+    height: auto;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    z-index: -1;
+}
+
+.BBHomeIntroWrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5em;
+    width: 100%;
+    padding: 30vh 10em;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBIntroInstructions {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 3em;
+    padding: 2em;
+    grid-column-start: 2;
+}
+
+.BBIntroTitle {
+    color: white;
+    letter-spacing: 0em;
+    font-size: 1.8em;
+    text-align: start;
+}
+
+.BBIntroDesc {
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 2em;
+    text-align: start;
+}
+
+.BBIntroLinkWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 2em;
+    gap: 0em;
+}
+
+.BBIntroLink, .BBIntroLink:link, .BBIntroLink:visited {
+    color:  rgba(255, 255, 255, 0.5);
+}
+
+.BBIntroLink:hover {
+    color: #FF5500;
+}
+
+/* PRODUCTS */
+.BBProductBody {
+    padding: 5%;
+    margin-top: 15vh;
+}
+
+.BBProductBunTitle {
+    width: 100%; 
+    text-align: center;
+}
+
+.BBProductWrapper {
+    background-color: #FCF5CE;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 3em;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBProductItem {
+    border-radius: 1em;
+    background-color:  rgba(255, 165, 0, 0.75);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 1fr;
+}
+
+.BBProductItem:hover {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+.BBProductImg, .BBItemImg, .BBCartImg {
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BBProductText {
+    padding: 1.5em;
+    display: grid;
+    align-items: center;
+    justify-items: left;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1.5em;
+}
+
+.BBProductName, .BBProductPrice {
+    color: #FF5500;
+}
+
+.BBProductName {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.BBProductPrice {
+    font-weight: 500;
+}
+
+#original {
+    background-image: url("../img/bunoriginal.jpg");
+}
+
+#gluten-free {
+    background-image: url("../img/bunglutenfree.jpg");
+}
+
+#blackberry {
+    background-image: url("../img/bunblackberry.jpg");
+}
+
+#walnut {
+    background-image: url("../img/bunwalnut.jpg");
+}
+
+#caramel-pecan {
+    background-image: url("../img/buncaramel.jpg");
+}
+
+#pumpkin-spice {
+    background-image: url("../img/bunpumpkin.jpg");
+}
+
+/* ABOUT */
+.BBAboutWrapper {
+    background-color: #FCF5CE;
+    padding: 5%;
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10em;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBAbout {
+    padding: 0 3em;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    gap: 5em;
+}
+
+.BBAboutTitle {
+    font-size: 48px; 
+    font-weight: 500;
+}
+
+#BBAbout1 {
+    grid-template-columns: 2fr 1fr;
+}
+
+.BBAboutImg {
+    border-radius: 2em;
+    object-fit: cover;
+    overflow: hidden;
+    width: 100%;
+    min-height: 30vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BBAboutText {
+    text-align: start;
+    align-items: start;
+}
+
+#about-1 {
+    background-image: url("../img/aboutkitchen.jpg");
+}
+
+#BBAbout2 {
+    grid-template-columns: 1fr 2fr;
+}
+
+#about-2 {
+    background-image: url("../img/aboutshop.jpg");
+}
+
+#text-2 {
+    text-align: right;
+}
+
+/* PRODUCT DETAILS */
+.BBItemWrapper {
+    background-color: #FCF5CE;
+    margin-top: 15vh;
+    padding-bottom: 10vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2em;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBItemBackButton {
+    width: 100%;
+    padding: 2em;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    align-items: center;
+}
+
+.BBItemDetails {
+    display: grid;
+    width: 100%;
+    padding: 0 3em;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    gap: 2em;
+}
+
+.BBItemPurchaseDetails h4, .BBItemPurchaseDetails p {
+    text-align: start;
+}
+
+.BBItemButtonDiv {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 1fr;
+    gap: 1em;
+}
+
+.BBItemSpecs {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 1fr;
+    gap: 2em;
+}
+
+.BBItemImgDesc {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 1fr;
+    gap: 1em;
+}
+
+.BBItemImg {
+    min-height: 50vh;
+    border-radius: 1em;
+}
+
+.BBItemOptions {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: start;
+    justify-content: left;
+    gap: 2em;
+}
+
+.BBOptionWrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5em;
+    align-items: start;
+    justify-content: left;
+}
+
+.BBOptionTitle {
+    font-size: 2em;
+    font-weight: 700;
+    color: orangered;
+    text-align: left;
+    align-self: end;
+    margin: 0;
+}
+
+.BBGlazeOption, .BBQuantityOption {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1em;
+    align-items: center;
+    justify-content: center;
+}
+
+.BBGlazeOptionWrapper, .BBQuantityOptionWrapper {
+    display: grid;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+}
+
+.BBGlazeOption div input[type="radio"], .BBQuantityOption div input[type="radio"] {
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+    padding: 1em 0;
+    z-index: 2;
+}
+
+.BBGlazeOption button, .BBQuantityOption button {
+    padding: 1em 0;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    color:  rgba(255, 70, 0, 0.25);
+    background-color: rgba(255, 165, 0, 0.25);
+    border-radius: 1em;
+}
+
+.BBGlazeOption .Checked, .BBQuantityOption .Checked, .BBGlazeOption button:hover, .BBQuantityOption button:hover {
+    color:  rgba(255, 70, 0, 1);
+    background-color: rgba(255, 165, 0, 0.75);
+    font-weight: 800;
+}
+
+.BBAddButton {
+    border-radius: 0.5em;
+    font-size: 1.2em;
+    background-color: rgb(0, 128, 128, 0.5);
+    color: white;
+    padding: 1em;
+}
+
+.BBAddButton:hover {
+    background-color: rgb(0, 128, 128, 1);
+}
+
+.BBItemReviews {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5em;
+}
+
+.BBReviewTitle {
+    display: grid;
+    grid-template-columns: 10em 10em;
+    grid-template-rows: 1fr;
+    gap: 2em;
+}
+
+.BBReviewLabel {
+    margin: 0;
+    padding: 1em 0;
+}
+
+.BBBackButtonArrow {
+    font-size: 2em; font-weight: 800; text-align: center; cursor: pointer;
+    color: #FF5500;
+}
+
+.BBBackButtonArrow:hover {
+    color: orange;
+}
+
+svg {
+    width: 100%;
+}
+
+.BBCart {
+    max-width: 3em;
+}
+
+.CartFill {
+    fill: #FF5500;
+}
+
+.CartFill:hover {
+    fill: white;
+}
+
+.BBTextInput {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px;
+    border-color: gray;
+}
+
+.BBTextInput:focus {
+    border-width: 2px;
+    border-color: black;
+}
+
+/* SHOPPING CART */
+.BBCartElement {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 1em;
+    align-items: center;
+    justify-items: center;
+    padding-bottom: 2em;
+}
+
+.BBCartDetails {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-auto-rows: minmax(3em, auto);
+    grid-template-columns: 1fr;
+}
+
+.BBCartDetails h4, .BBCartDetails h3, .BBCartDetails h2 {
+    font-weight: 300;
+    text-align: start;
+    margin: 0;
+}
+
+.BBCartDetails h2 {
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.BBCartImg {
+    border-radius: 1em;
+}
+
+.BBCartActions {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: start;
+    justify-items: center;
+    gap: 5em;
+}
+
+.BBCartActions h3 {
+    font-size: 1.2em;
+    font-weight: 500;
+    cursor: pointer;
+    color: rgba(110, 110, 110, 0.75);
+}
+
+.BBCartActions h3:hover {
+    color: rgba(110, 110, 110, 0.5);
+}
+
+.BBCartHeader h4 {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.BBWishHeader {
+    padding-top: 3em;
+}
+
+.BBWishHeader h5 {
+    font-weight: 300;
+    font-style: italic;
+}
+
+.BBDiscountStrikethrough {
+    color: red;
+    text-decoration: line-through;
+}
+
+/* CAROUSEL */
+.BBCarouselDiv {
+    display: grid;
+    grid-template-columns: 10vw 80vw 10vw;
+    grid-template-rows: 1fr;
+    width: 100%;
+    align-items: center;
+    justify-items: center
+}
+
+.BBCarouselWrapper {
+    position: relative;
+    display: flexbox;
+    flex-direction: row;
+    width: 100%;
+    height: 40vh;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+.BBButtonWrapper {
+    display: block;
+    height: 100%;
+    width: auto;
+    align-items: center;
+    z-index: 1;
+}
+
+.BBSlideWrapper {
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(6, 30vw);
+    grid-template-rows: 1fr;
+    width: 100%;
+    height: 100%;
+    transition: left 1s;
+    gap: 2vw;
+    align-items: center;
+    justify-items: center
+}
+
+.BBSlideImg {
+    border-radius: 0.5em;
+    object-fit: cover;
+    overflow: hidden;
+    width: 25vw;
+    height: 20vh;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.BBSlideElement {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    background-color: rgba(255, 165, 0, 0.75);
+    border-radius: 0.5em;
+    height: 100%;
+    width: 100%;
+    padding: 2em 0;
+    cursor: pointer;
+}
+
+.BBSlideElement:hover {
+    background-color: rgba(255, 165, 0, 0.5);
+}
+
+.BBSlideText {
+    margin: 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.inactive {
+    display: none;
+  }
+
+.active {
+display: block;
+}

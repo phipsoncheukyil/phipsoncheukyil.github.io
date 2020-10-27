@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/homework_6/static/css/main.cb423c03.chunk.css",
+    "main.js": "/homework_6/static/js/main.8d0a0f7e.chunk.js",
+    "main.js.map": "/homework_6/static/js/main.8d0a0f7e.chunk.js.map",
+    "runtime-main.js": "/homework_6/static/js/runtime-main.436ccc6e.js",
+    "runtime-main.js.map": "/homework_6/static/js/runtime-main.436ccc6e.js.map",
+    "static/js/2.c5d89656.chunk.js": "/homework_6/static/js/2.c5d89656.chunk.js",
+    "static/js/2.c5d89656.chunk.js.map": "/homework_6/static/js/2.c5d89656.chunk.js.map",
+    "index.html": "/homework_6/index.html",
+    "static/css/main.cb423c03.chunk.css.map": "/homework_6/static/css/main.cb423c03.chunk.css.map",
+    "static/js/2.c5d89656.chunk.js.LICENSE.txt": "/homework_6/static/js/2.c5d89656.chunk.js.LICENSE.txt",
+    "static/media/style.css": "/homework_6/static/media/homebg.b310b645.jpg",
+    "static/media/bunlogo.cd9b2c50.png": "/homework_6/static/media/bunlogo.cd9b2c50.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.436ccc6e.js",
+    "static/js/2.c5d89656.chunk.js",
+    "static/css/main.cb423c03.chunk.css",
+    "static/js/main.8d0a0f7e.chunk.js"
+  ]
+}
