@@ -15,6 +15,7 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
+      itemID: 0,
       siteState: 0,
       previousState: 0,
       focusProduct: null,
@@ -58,20 +59,21 @@ class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   /// SHOPPING CART
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  AddToCart(order) {
+  AddToCart(order, id = -1) {
     console.log("New Order: ", order);
     let {amount, glaze, product} = order;
     let temp = this.state.shoppingCart;
 
     temp.push({
-      id: this.state.shoppingCart.length,
+      id: this.state.itemID,
       amount: amount,
       glaze: glaze,
       product: product
     });
 
     this.setState((state, props) => ({
-      shoppingCart: temp
+      shoppingCart: temp,
+      itemID: this.state.itemID+1
     }), () => {this.SetSiteState(this.state.previousState)});
   }
 
@@ -115,7 +117,7 @@ class App extends React.Component {
     let temp = this.state.wishlist;
 
     temp.push({
-      id: this.state.wishlist.length,
+      id: this.state.itemID+1,
       amount: amount,
       glaze: glaze,
       product: product
@@ -146,7 +148,7 @@ class App extends React.Component {
     let temp = this.state.shoppingCart;
 
     temp.push({
-      id: this.state.shoppingCart.length,
+      id: id, // TODO: Change to given id
       amount: amount,
       glaze: glaze,
       product: product
@@ -182,7 +184,7 @@ class App extends React.Component {
     return (
       <HashRouter basename='/'>
       <div className="App">
-        <NavMenu OnChange={this.SetSiteState}/>
+        <NavMenu OnChange={this.SetSiteState} CartNum={this.state.shoppingCart.length}/>
         {siteMap[this.state.siteState]}
       </div>
       </HashRouter>

@@ -70,6 +70,30 @@ ul {
     padding: 10%;
 }
 
+.BBCartIconWrapper {
+    position: relative;
+    height: auto;
+}
+
+.BBBadge {
+    display: visible;
+    position: absolute;
+    width: 1.5em;
+    height: 1.5em;
+    top: -1.5em;
+    right: 0;
+    background-color: maroon;
+    color: white;
+    border-radius: 1.5em;
+    font-size: .5em;
+    z-index: 2;
+    padding: .5em;
+}
+
+.BBBadgeNull {
+    display: none;
+}
+
 .BBMenuNav {
     width: 100%;
     height: 100%;
