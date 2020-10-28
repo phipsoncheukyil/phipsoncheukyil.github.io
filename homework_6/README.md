@@ -1,3 +1,25 @@
+## Directory Overview for Homework 6 (All files are within the 'src' directory)
+- App.js: Primary controller that displays the navigation menu and the corresponding pages based on user interaction. Also holds the logic for the shopping cart and wishlist
+- components: The subdirectory containing all the relevant code for the components displayed on the page
+- img: The subdirectory containing all the images for the website
+
+## Components subdirectory overview
+- About.js: React component for the about us page
+- Carousel: Subdirectory containing code for the carousel implementation (bonus part)
+- Cart.js: React component for the shopping cart page
+- CartElement.js: React component representing each item in the shopping cart
+- CartOrderDetails.js: React component directing users to the cart item details (for editing or deleting the item in the cart)
+- Home.js: React component for displaying the home page
+- NavMenu.js: React component for displaying the navigation menu
+- OfferElement.js: React component for each grid element in the special offers page
+- ProductDetails.js: React component for displaying the details of a product from the Product page
+- ProductDisplay.js: React component for a grid element in the product page
+- ProductList.js: A javascript object for the products defined for this assignment
+- SpecialOffer.js: React component for the special offer page
+- style.css: The stylesheet for the entire website
+- WishElement.js: React component for the item in the wishlist
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
