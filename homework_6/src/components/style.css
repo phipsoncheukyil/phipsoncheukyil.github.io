@@ -43,6 +43,7 @@ ul {
     padding: 0;
 }
 
+/* Div to hold the different components of the navigation bar */
 .BBMenuWrapper {
     position: fixed;
     width: 100%;
@@ -58,11 +59,13 @@ ul {
     z-index: 1;
 }
 
+/* Class for styling the menu logo */
 .BBMenuLogo {
     width: 200px;
     cursor: pointer;
 }
 
+/* For holding all images for the website */
 .BBImg {
     max-width: 100%;
     max-height: 100%;
@@ -70,11 +73,13 @@ ul {
     padding: 10%;
 }
 
+/* Wrapping around the shopping cart SVG */
 .BBCartIconWrapper {
     position: relative;
     height: auto;
 }
 
+/* New Div overlay for showing the cart badge for the number of items in the cart */
 .BBBadge {
     display: visible;
     position: absolute;
@@ -90,10 +95,12 @@ ul {
     padding: .5em;
 }
 
+/* The class when there are 0 items in the cart to hide the cart badge altogether */
 .BBBadgeNull {
     display: none;
 }
 
+/* The navigation bar grid for the buttons for the other pages in the menu */
 .BBMenuNav {
     width: 100%;
     height: 100%;
@@ -105,10 +112,12 @@ ul {
     gap: 2.5%;
 }
 
+/* Specifies where the first item on the navigation bar start */
 .BBMenuNavLinkFirst {
     grid-column-start: 4;
 }
 
+/* Used for changing color of the text when hovered and clicked */
 .BBMenuNavItem, .BBMenuNavItem:link, .BBMenuNavItem:visited {
     font-weight: 500;
     font-size: 1.3em;
@@ -121,6 +130,7 @@ ul {
 }
 
 /* HOME */
+/* Used to create the parallax effect for the home page */
 .BBHomeParallax {
     display: block;
 
@@ -139,6 +149,7 @@ ul {
     z-index: -1;
 }
 
+/* Div wrapper showing the intro information on the right of the screen */
 .BBHomeIntroWrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -150,6 +161,7 @@ ul {
     justify-items: center;
 }
 
+/* Black background bevel for the intro screen */
 .BBIntroInstructions {
     width: 100%;
     height: 100%;
@@ -159,6 +171,7 @@ ul {
     grid-column-start: 2;
 }
 
+/* White title for the introduction of the page */
 .BBIntroTitle {
     color: white;
     letter-spacing: 0em;
@@ -166,12 +179,14 @@ ul {
     text-align: start;
 }
 
+/* Text for the description for the introduction of the page */
 .BBIntroDesc {
     color: rgba(255, 255, 255, 0.5);
     line-height: 2em;
     text-align: start;
 }
 
+/* Links for the introduction (orange on hover) */
 .BBIntroLinkWrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -188,16 +203,19 @@ ul {
 }
 
 /* PRODUCTS */
+/* Wrapper for the products grid */
 .BBProductBody {
     padding: 5%;
     margin-top: 15vh;
 }
 
+/* Title for the bun */
 .BBProductBunTitle {
     width: 100%; 
     text-align: center;
 }
 
+/* Wrapper for the product grid (nested within product body */
 .BBProductWrapper {
     background-color: #FCF5CE;
     display: grid;
@@ -210,6 +228,7 @@ ul {
     justify-items: center;
 }
 
+/* Grid element for the product */
 .BBProductItem {
     border-radius: 1em;
     background-color:  rgba(255, 165, 0, 0.75);
@@ -220,10 +239,12 @@ ul {
     grid-template-rows: 2fr 1fr;
 }
 
+/* Changes the background color on hover */
 .BBProductItem:hover {
     background-color: rgba(255, 165, 0, 0.5);
 }
 
+/* Image bevel for the images in the product cart and item */
 .BBProductImg, .BBItemImg, .BBCartImg {
     border-top-right-radius: 1em;
     border-top-left-radius: 1em;
@@ -237,6 +258,7 @@ ul {
     background-size: cover;
 }
 
+/* Text for the product element */
 .BBProductText {
     padding: 1.5em;
     display: grid;
@@ -247,6 +269,7 @@ ul {
     gap: 1.5em;
 }
 
+/* Text for the product name and price */
 .BBProductName, .BBProductPrice {
     color: #FF5500;
 }
@@ -260,6 +283,7 @@ ul {
     font-weight: 500;
 }
 
+/* Sets the background of the div elements */
 #original {
     background-image: url("../img/bunoriginal.jpg");
 }
@@ -285,6 +309,7 @@ ul {
 }
 
 /* ABOUT */
+/* Div wrapper for the about page */
 .BBAboutWrapper {
     background-color: #FCF5CE;
     padding: 5%;
@@ -298,6 +323,7 @@ ul {
     justify-items: center;
 }
 
+/* The general wrapper grid for the first and second text sections for the about page */
 .BBAbout {
     padding: 0 3em;
     width: 100%;
@@ -306,15 +332,18 @@ ul {
     gap: 5em;
 }
 
+/* Title for each about element */
 .BBAboutTitle {
     font-size: 48px; 
     font-weight: 500;
 }
 
+/* First element: Text left, image right */
 #BBAbout1 {
     grid-template-columns: 2fr 1fr;
 }
 
+/* Image element for the about page */
 .BBAboutImg {
     border-radius: 2em;
     object-fit: cover;
@@ -327,11 +356,13 @@ ul {
     background-size: cover;
 }
 
+/* Text element for the about page */
 .BBAboutText {
     text-align: start;
     align-items: start;
 }
 
+/* Image for the first about element */
 #about-1 {
     background-image: url("../img/aboutkitchen.jpg");
 }
@@ -340,6 +371,7 @@ ul {
     grid-template-columns: 1fr 2fr;
 }
 
+/* IMage elemtn for the second about element */
 #about-2 {
     background-image: url("../img/aboutshop.jpg");
 }
@@ -349,6 +381,7 @@ ul {
 }
 
 /* PRODUCT DETAILS */
+/* Item wrapper for each product detail */
 .BBItemWrapper {
     background-color: #FCF5CE;
     margin-top: 15vh;
@@ -361,6 +394,7 @@ ul {
     justify-items: center;
 }
 
+/* Back button styling for the product back button */
 .BBItemBackButton {
     width: 100%;
     padding: 2em;
@@ -370,6 +404,7 @@ ul {
     align-items: center;
 }
 
+/* Item details styling */
 .BBItemDetails {
     display: grid;
     width: 100%;
@@ -380,10 +415,12 @@ ul {
     gap: 2em;
 }
 
+/* Title and paragraph styling for the item details */
 .BBItemPurchaseDetails h4, .BBItemPurchaseDetails p {
     text-align: start;
 }
 
+/* Button for adding to cart or wishlist for the item details */
 .BBItemButtonDiv {
     display: grid;
     grid-template-columns: auto auto;
@@ -391,6 +428,7 @@ ul {
     gap: 1em;
 }
 
+/* Specifications for the item */
 .BBItemSpecs {
     display: grid;
     width: 100%;
@@ -401,6 +439,7 @@ ul {
     gap: 2em;
 }
 
+/* Description of the item */
 .BBItemImgDesc {
     display: grid;
     width: 100%;
@@ -412,11 +451,13 @@ ul {
     gap: 1em;
 }
 
+/* Image styling for the item */
 .BBItemImg {
     min-height: 50vh;
     border-radius: 1em;
 }
 
+/* Options styling for the item (glaze and quantity) */
 .BBItemOptions {
     width: 100%;
     height: 100%;
@@ -427,6 +468,7 @@ ul {
     gap: 2em;
 }
 
+/* Div wrapper for the options for Glaze/Quantity */
 .BBOptionWrapper {
     width: 100%;
     display: grid;
@@ -436,6 +478,7 @@ ul {
     justify-content: left;
 }
 
+/* Title for the options */
 .BBOptionTitle {
     font-size: 2em;
     font-weight: 700;
@@ -445,6 +488,7 @@ ul {
     margin: 0;
 }
 
+/* Glaze and Quantity options */
 .BBGlazeOption, .BBQuantityOption {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -453,6 +497,7 @@ ul {
     justify-content: center;
 }
 
+/* Wrapper nested in the above div for the grid layout */
 .BBGlazeOptionWrapper, .BBQuantityOptionWrapper {
     display: grid;
     position: relative;
@@ -461,6 +506,7 @@ ul {
     justify-items: center;
 }
 
+/* Currently not used (from assignment 5) */
 .BBGlazeOption div input[type="radio"], .BBQuantityOption div input[type="radio"] {
     opacity: 0;
     position: absolute;
@@ -469,6 +515,7 @@ ul {
     z-index: 2;
 }
 
+/* Button style for the options */
 .BBGlazeOption button, .BBQuantityOption button {
     padding: 1em 0;
     width: 100%;
@@ -479,12 +526,14 @@ ul {
     border-radius: 1em;
 }
 
+/* Changing how the buttons look when hovered */
 .BBGlazeOption .Checked, .BBQuantityOption .Checked, .BBGlazeOption button:hover, .BBQuantityOption button:hover {
     color:  rgba(255, 70, 0, 1);
     background-color: rgba(255, 165, 0, 0.75);
     font-weight: 800;
 }
 
+/* Styling button for AddtoCart */
 .BBAddButton {
     border-radius: 0.5em;
     font-size: 1.2em;
@@ -497,6 +546,7 @@ ul {
     background-color: rgb(0, 128, 128, 1);
 }
 
+/* Styling the grid div for the item reviews */
 .BBItemReviews {
     width: 100%;
     display: grid;
@@ -504,6 +554,7 @@ ul {
     gap: 5em;
 }
 
+/* Styling the title for the reviews */
 .BBReviewTitle {
     display: grid;
     grid-template-columns: 10em 10em;
@@ -511,15 +562,18 @@ ul {
     gap: 2em;
 }
 
+/* Styling the label for the reviews */
 .BBReviewLabel {
     margin: 0;
     padding: 1em 0;
 }
 
+/* Styling the description of the review content */
 .BBReviewDesc {
     text-align: left;
 }
 
+/* Styling the back arrow for the back button on the item details */
 .BBBackButtonArrow {
     font-size: 2em; font-weight: 800; text-align: center; cursor: pointer;
     color: #FF5500;
@@ -537,6 +591,7 @@ svg {
     max-width: 3em;
 }
 
+/* Styling the shopping cart SVG css */
 .CartFill {
     fill: #FF5500;
 }
@@ -545,6 +600,7 @@ svg {
     fill: white;
 }
 
+/* Styling the Text Field area in the review section */
 .BBTextInput {
     background-color: white;
     border-style: solid;
@@ -558,6 +614,7 @@ svg {
 }
 
 /* SHOPPING CART */
+/* Styling the cart element div */
 .BBCartElement {
     display: grid;
     width: 100%;
@@ -569,6 +626,7 @@ svg {
     padding-bottom: 2em;
 }
 
+/* Sub div for the details of the cart item */
 .BBCartDetails {
     display: grid;
     width: 100%;
@@ -577,6 +635,7 @@ svg {
     grid-template-columns: 1fr;
 }
 
+/* Restyling all the headers nesting within the cart details */
 .BBCartDetails h4, .BBCartDetails h3, .BBCartDetails h2 {
     font-weight: 300;
     text-align: start;
@@ -588,10 +647,12 @@ svg {
     font-weight: 600;
 }
 
+/* Add a bevel for the elements in the cart image */
 .BBCartImg {
     border-radius: 1em;
 }
 
+/* Styling the text for editing and deleting items from the shopping cart */
 .BBCartActions {
     display: flex;
     width: 100%;
@@ -617,6 +678,7 @@ svg {
     font-style: italic;
 }
 
+/* Styling the header for the wishlist */
 .BBWishHeader {
     padding-top: 3em;
 }
@@ -626,12 +688,14 @@ svg {
     font-style: italic;
 }
 
+/* Styling the special offers strikethrough costs
 .BBDiscountStrikethrough {
     color: red;
     text-decoration: line-through;
 }
 
 /* CAROUSEL */
+/* Styling the div for the carousel */
 .BBCarouselDiv {
     display: grid;
     grid-template-columns: 10vw 80vw 10vw;
@@ -641,6 +705,7 @@ svg {
     justify-items: center
 }
 
+/* Styling the wrapper for the carousel */
 .BBCarouselWrapper {
     position: relative;
     display: flexbox;
@@ -652,6 +717,7 @@ svg {
     overflow-x: hidden;
 }
 
+/* Styling the buttons to the left and right of the carousel */
 .BBButtonWrapper {
     display: block;
     height: 100%;
@@ -660,6 +726,7 @@ svg {
     z-index: 1;
 }
 
+/* Styling the overflowing slider in the carousel */
 .BBSlideWrapper {
     position: absolute;
     display: grid;
@@ -673,6 +740,7 @@ svg {
     justify-items: center
 }
 
+/* Styling the image nested within each slide */
 .BBSlideImg {
     border-radius: 0.5em;
     object-fit: cover;
@@ -685,6 +753,7 @@ svg {
     background-size: cover;
 }
 
+/* Styling the background for the div of the style element */
 .BBSlideElement {
     display: grid;
     align-items: center;
@@ -701,16 +770,9 @@ svg {
     background-color: rgba(255, 165, 0, 0.5);
 }
 
+/* Styling the title for the sliding elements in the carousel */
 .BBSlideText {
     margin: 0;
     margin-block-start: 0;
     margin-block-end: 0;
-}
-
-.inactive {
-    display: none;
-  }
-
-.active {
-display: block;
 }

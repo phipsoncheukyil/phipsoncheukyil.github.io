@@ -4,6 +4,7 @@ import "./style.css";
 class ProductElement extends React.Component {
     constructor(props) {
         super(props);
+        // Props contains the product information that will be displayed (see ProductList for more information)
         this.state = {
             name: props.name,
             price: props.price,
