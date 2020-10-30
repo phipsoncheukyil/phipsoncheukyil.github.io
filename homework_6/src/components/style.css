@@ -516,6 +516,10 @@ ul {
     padding: 1em 0;
 }
 
+.BBReviewDesc {
+    text-align: left;
+}
+
 .BBBackButtonArrow {
     font-size: 2em; font-weight: 800; text-align: center; cursor: pointer;
     color: #FF5500;

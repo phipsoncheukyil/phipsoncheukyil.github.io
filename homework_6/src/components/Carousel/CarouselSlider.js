@@ -9,7 +9,6 @@ export default class CarouselSlider extends Component {
         this.state = {
             activeIndex: 0,
             recs: props.recs,
-            name: props.currentProduct
             };
 
         this.goToNextSlide = this.goToNextSlide.bind(this);
@@ -42,8 +41,9 @@ export default class CarouselSlider extends Component {
                 <div className='BBCarouselWrapper'>
                     <div className='BBSlideWrapper' style={{left: `${this.state.activeIndex * -32}vw`}}>
                         <CarouselElement
-                            recs={this.state.recs}
-                            product={this.state.name}
+                            recs={this.props.recs}
+                            product={this.props.currentProduct}
+                            viewDetails={this.props.viewDetails}
                         />
                     </div>
                 </div>

@@ -21,12 +21,14 @@ class ProductPage extends React.Component {
                                     price={productData.original.price} 
                                     img={productData.original.img} 
                                     desc={productData.original.desc} 
-                                    onOpenDetails={this.state.openDetails}/>
+                                    onOpenDetails={this.state.openDetails}
+                                    discount={productData.original.discount}/>
                     <ProductElement name={productData.glutenfree.name} 
                                     price={productData.glutenfree.price} 
                                     img={productData.glutenfree.img} 
                                     desc={productData.glutenfree.desc} 
-                                    onOpenDetails={this.state.openDetails}/>
+                                    onOpenDetails={this.state.openDetails}
+                                    discount={productData.original.discount}/>
                     <ProductElement name={productData.caramelpecan.name} 
                                     price={productData.caramelpecan.price} 
                                     img={productData.caramelpecan.img} 

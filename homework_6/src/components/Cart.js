@@ -14,6 +14,7 @@ class CartPage extends React.Component {
         let orderMsg = <div></div>;
         let wishMsg = <div></div>;
         let checkoutOverview = <div></div>;
+        let paybutton = <div></div>;
 
         if (orderCount === 0) {
             orderMsg = <h4>You currently have no buns in your cart.</h4>;
@@ -25,6 +26,8 @@ class CartPage extends React.Component {
             }
 
             checkoutOverview = <h3 style={{textAlign: 'start', fontWeight: 500}}>Total Cost: ${Number(totalPay).toFixed(2)}</h3>
+            paybutton = <button className="BBAddButton" onClick={this.props.payItems}>PAY NOW</button>
+
         }
 
         if (wishCount === 0) {
@@ -42,6 +45,7 @@ class CartPage extends React.Component {
                     return (<CartElement key={i} order={order} updateOrder={this.props.updateOrder} removeOrder={this.props.removeOrder}/>);
                 })}
                 {checkoutOverview}
+                {paybutton}
                 <div className="BBWishHeader">
                     <h3>YOUR WISHLIST</h3>
                     {wishMsg}

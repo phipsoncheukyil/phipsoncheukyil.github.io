@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavMenu from './components/NavMenu';
 import HomePage from './components/Home';
 import ProductPage from './components/Products';
@@ -7,9 +8,16 @@ import DetailPage from './components/ProductDetail';
 import CartOrderDetailPage from './components/CartOrderDetail';
 import CartPage from './components/Cart';
 import SpecialOfferPage from './components/SpecialOffer';
-import { HashRouter, Route, Link } from 'react-router-dom';
+
+import { HashRouter } from 'react-router-dom';
+import Snackbar from '@material-ui/core/Snackbar'; 
+import MuiAlert from '@material-ui/lab/Alert';
 
 import './App.css';
+
+function Alert(props) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
+}
 
 class App extends React.Component {
   constructor (props) {
@@ -20,7 +28,9 @@ class App extends React.Component {
       previousState: 0,
       focusProduct: null,
       shoppingCart: [],
-      wishlist: []
+      wishlist: [],
+      alertOpen: false,
+      alertMsg: ""
     }
 
     // Navigation
@@ -31,11 +41,16 @@ class App extends React.Component {
     this.AddToCart = this.AddToCart.bind(this);
     this.RemoveCartOrder = this.RemoveCartOrder.bind(this);
     this.UpdateCartOrder = this.UpdateCartOrder.bind(this);
+    this.ClearCart = this.ClearCart.bind(this);
 
     // Wishlist
     this.AddToWishlist = this.AddToWishlist.bind(this);
     this.RemoveWishlistItem = this.RemoveWishlistItem.bind(this);
     this.AddWishToCart = this.AddWishToCart.bind(this);
+
+    // Alert Messages
+    this.ShowAlert = this.ShowAlert.bind(this);
+    this.HideAlert = this.HideAlert.bind(this);
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -74,7 +89,7 @@ class App extends React.Component {
     this.setState((state, props) => ({
       shoppingCart: temp,
       itemID: this.state.itemID+1
-    }), () => {this.SetSiteState(this.state.previousState)});
+    }), () => {this.SetSiteState(this.state.previousState); this.ShowAlert("Added item to cart")});
   }
 
   RemoveCartOrder(id) {
@@ -88,7 +103,7 @@ class App extends React.Component {
 
     this.setState((state, props) => ({
       shoppingCart: temp
-    }), () => {this.SetSiteState(3)});
+    }), () => {this.SetSiteState(3); this.ShowAlert("Removed item from cart")});
   }
 
   UpdateCartOrder(id, newOrder) {
@@ -105,7 +120,13 @@ class App extends React.Component {
 
     this.setState((state, props) => ({
       shoppingCart: temp
-    }), () => {this.SetSiteState(3)});
+    }), () => {this.SetSiteState(3); this.ShowAlert("Updated your cart item")});
+  }
+
+  ClearCart() {
+    this.setState((s, p) => ({
+      shoppingCart: []
+    }), () => {this.SetSiteState(3); this.ShowAlert("Successfully purchased all items in cart!")});
   }
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -125,7 +146,7 @@ class App extends React.Component {
 
     this.setState((state, props) => ({
       wishlist: temp
-    }), () => {this.SetSiteState(1)});
+    }), () => {this.SetSiteState(1); this.ShowAlert("Added item to wishlist")});
   }
 
   RemoveWishlistItem(id) {
@@ -139,7 +160,7 @@ class App extends React.Component {
 
     this.setState((state, props) => ({
       wishlist: temp
-    }), () => {this.SetSiteState(3)});
+    }), () => {this.SetSiteState(3); this.ShowAlert("Removed wish from wishlist")});
   }
 
   AddWishToCart(order) {
@@ -148,7 +169,7 @@ class App extends React.Component {
     let temp = this.state.shoppingCart;
 
     temp.push({
-      id: id, // TODO: Change to given id
+      id: id,
       amount: amount,
       glaze: glaze,
       product: product
@@ -159,6 +180,25 @@ class App extends React.Component {
     }), () => {this.RemoveWishlistItem(id)});
   }
 
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  /// ALERT MESSAGES
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  ShowAlert(msg) {
+    this.setState((state, props) => ({
+      alertMsg: msg,
+      alertOpen: true
+    }));
+  }
+
+  HideAlert() {
+    this.setState((state, props) => ({
+      alertOpen: false
+    }));
+  }
+
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+  /// RENDER
+  //////////////////////////////////////////////////////////////////////////////////////////////////
   render() {
     let siteMap = {
       0: <HomePage setSite={this.SetSiteState}/>,
@@ -169,7 +209,8 @@ class App extends React.Component {
                    removeOrder={this.RemoveCartOrder} 
                    updateOrder={this.ViewProductDetails}
                    removeWish={this.RemoveWishlistItem} 
-                   moveWish={this.AddWishToCart}/>,
+                   moveWish={this.AddWishToCart}
+                   payItems={this.ClearCart}/>,
       4: <DetailPage product={this.state.focusProduct} 
                      onBack={() => this.SetSiteState(this.state.previousState)} 
                      addToCart={this.AddToCart} 
@@ -187,6 +228,14 @@ class App extends React.Component {
         <NavMenu OnChange={this.SetSiteState} CartNum={this.state.shoppingCart.length}/>
         {siteMap[this.state.siteState]}
       </div>
+      <Snackbar
+        autoHideDuration={3000}
+        open={this.state.alertOpen}
+        onClose={this.HideAlert}>
+          <Alert onClose={this.HideAlert} severity="success">
+            {this.state.alertMsg}
+          </Alert>
+      </Snackbar>
       </HashRouter>
     );
   }

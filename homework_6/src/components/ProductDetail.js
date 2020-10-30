@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 import CarouselSlider from './Carousel/CarouselSlider';
 import productData from './ProductList';
+import Review from './Review';
 
 class DetailPage extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class DetailPage extends React.Component {
     
         this.SetGlaze = this.SetGlaze.bind(this);
         this.SetAmount = this.SetAmount.bind(this);
+        this.SwapElement = this.SwapElement.bind(this);
     }
 
     SetGlaze(val) {
@@ -29,8 +31,16 @@ class DetailPage extends React.Component {
         }));
     }
 
+    SwapElement(newItem) {
+        this.setState(() => ({
+            product: newItem
+        }));
+    }
+
 
     render() {
+        let price = 'discount' in this.state.product ? this.state.product.discount : this.state.product.price;
+
         return (
             <div id="BBItems" className="BBItemWrapper">
                 <div className="BBItemBackButton">
@@ -84,7 +94,7 @@ class DetailPage extends React.Component {
 
                         <div className="BBItemPurchaseDetails">
                             <h4>{this.state.glaze} Glaze {this.state.product.name}</h4>
-                            <p>Total Cost: ${Number(this.state.amount * this.state.product.price).toFixed(2)} ({this.state.amount} x {this.state.product.price})</p>
+                            <p>Total Cost: ${Number(this.state.amount * price).toFixed(2)} ({this.state.amount} x {price})</p>
                         </div>
 
                         <div className="BBItemButtonDiv">
@@ -94,7 +104,11 @@ class DetailPage extends React.Component {
                         </div>
                     </div>
                 </div>
-                <CarouselSlider currentProduct={this.state.product.name} recs={productData}/>
+            <h2 style={{fontSize: "1.7em", textAlign: "left", width: "100%", paddingLeft: "2em"}}>Other Buns You May Like:</h2>
+            <CarouselSlider currentProduct={this.state.product.name} recs={productData} viewDetails={this.SwapElement}/>
+            <div className="BBItemDetails">
+                <Review/>
+            </div>
             </div>
         );
     }
