@@ -23,14 +23,14 @@ class App extends React.Component {
   constructor (props) {
     super(props);
     this.state = {
-      itemID: 0,
-      siteState: 0,
-      previousState: 0,
-      focusProduct: null,
-      shoppingCart: [],
-      wishlist: [],
-      alertOpen: false,
-      alertMsg: ""
+      itemID: 0, // Counter that assigns a unique value for each item added to cart or wishlist
+      siteState: 0, // Integer value that maps to the component to render
+      previousState: 0, // Used for returning back to a previous page (details page)
+      focusProduct: null, // Used to render the details of a product based on click
+      shoppingCart: [], // Representation of items stored in shopping cart
+      wishlist: [], // Representation of items stored in wishlist
+      alertOpen: false, // State for alert messages
+      alertMsg: "" // Actual alert message
     }
 
     // Navigation
@@ -56,6 +56,9 @@ class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   /// NAVIGATE PAGE
   //////////////////////////////////////////////////////////////////////////////////////////////////
+  /**
+   * Changes the siteState integer to change the displayed react component/page
+   */
   SetSiteState(newState) {
     console.log("Shopping Cart: ", this.state.shoppingCart);
     this.setState((state, props) => ({
@@ -63,6 +66,9 @@ class App extends React.Component {
     }), () => {if (newState !== 4) this.setState(() => ({focusProduct: null})); });
   }
 
+  /**
+   * Helper function to view a specific product in the product details page
+   */
   ViewProductDetails(newProduct, site) {
     console.log("Viewing product details for: ", newProduct);
     this.setState((state, props) => ({
@@ -74,6 +80,9 @@ class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   /// SHOPPING CART
   //////////////////////////////////////////////////////////////////////////////////////////////////
+  /**
+   * Adds the order object to the shopping cart
+   */
   AddToCart(order, id = -1) {
     console.log("New Order: ", order);
     let {amount, glaze, product} = order;
@@ -92,6 +101,9 @@ class App extends React.Component {
     }), () => {this.SetSiteState(this.state.previousState); this.ShowAlert("Added item to cart")});
   }
 
+  /**
+   * Remove the item from the cart specified by id
+   */
   RemoveCartOrder(id) {
     let temp = this.state.shoppingCart;
     for (var i = 0; i < temp.length; i++) {
@@ -106,6 +118,9 @@ class App extends React.Component {
     }), () => {this.SetSiteState(3); this.ShowAlert("Removed item from cart")});
   }
 
+  /**
+   * Updates the item in the cart specified by id with the new object newOrder
+   */
   UpdateCartOrder(id, newOrder) {
     let temp = this.state.shoppingCart;
     let {amount, glaze, product} = newOrder;
@@ -123,6 +138,9 @@ class App extends React.Component {
     }), () => {this.SetSiteState(3); this.ShowAlert("Updated your cart item")});
   }
 
+  /**
+   * Clears all the items in the shopping cart (used to fake a successful order purchase)
+   */
   ClearCart() {
     this.setState((s, p) => ({
       shoppingCart: []
@@ -132,6 +150,9 @@ class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   /// WISHLIST
   //////////////////////////////////////////////////////////////////////////////////////////////////
+  /**
+   * Adds order to wishlist
+   */
   AddToWishlist(order) {
     console.log("New Wishlist Item: ", order);
     let {amount, glaze, product} = order;
@@ -149,6 +170,9 @@ class App extends React.Component {
     }), () => {this.SetSiteState(1); this.ShowAlert("Added item to wishlist")});
   }
 
+  /**
+   * Removes order from wishlist
+   */
   RemoveWishlistItem(id) {
     let temp = this.state.wishlist;
     for (var i = 0; i < temp.length; i++) {
@@ -163,6 +187,9 @@ class App extends React.Component {
     }), () => {this.SetSiteState(3); this.ShowAlert("Removed wish from wishlist")});
   }
 
+  /**
+   * Adds wish item to shopping cart and deletes item from wishlist
+   */
   AddWishToCart(order) {
     console.log("Adding Wishlist Item to Cart: ", order);
     let {id, amount, glaze, product} = order;
@@ -183,6 +210,10 @@ class App extends React.Component {
   //////////////////////////////////////////////////////////////////////////////////////////////////
   /// ALERT MESSAGES
   //////////////////////////////////////////////////////////////////////////////////////////////////
+  /**
+   * Displays an alert message given by msg string (using MaterialUI)
+   * @see https://material-ui.com/components/snackbars/
+   */
   ShowAlert(msg) {
     this.setState((state, props) => ({
       alertMsg: msg,
@@ -190,6 +221,10 @@ class App extends React.Component {
     }));
   }
 
+  /**
+   * Hides the alert message after a given duration (using MaterialUI)
+   * @see https://material-ui.com/components/snackbars/
+   */
   HideAlert() {
     this.setState((state, props) => ({
       alertOpen: false
@@ -200,6 +235,7 @@ class App extends React.Component {
   /// RENDER
   //////////////////////////////////////////////////////////////////////////////////////////////////
   render() {
+    // Dictionary that maps the integer value to the react component
     let siteMap = {
       0: <HomePage setSite={this.SetSiteState}/>,
       1: <ProductPage openDetails={this.ViewProductDetails}/>,

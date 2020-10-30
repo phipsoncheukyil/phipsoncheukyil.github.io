@@ -15,6 +15,7 @@ class ProductElement extends React.Component {
     }
 
     render() {
+        // Check if item has a discount based on special offers and if so display that price
         let price = 'discount' in this.props ? this.state.discount : this.state.price;
 
         return(

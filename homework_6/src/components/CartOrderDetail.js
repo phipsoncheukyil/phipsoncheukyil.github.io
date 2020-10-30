@@ -16,12 +16,14 @@ class CartOrderDetailPage extends React.Component {
         this.SetAmount = this.SetAmount.bind(this);
     }
 
+    // Sets the value of this.state.glaze for Glaze of bun
     SetGlaze(val) {
         this.setState((state, props) => ({
             glaze: val
         }));
     }
 
+    // Sets the value of this.state.amount for Quantity of bun
     SetAmount(val) {
         this.setState((state, props) => ({
             amount: val

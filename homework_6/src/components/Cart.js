@@ -4,10 +4,6 @@ import CartElement from './CartElement';
 import WishElement from './WishElement';
 
 class CartPage extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const orderCount = this.props.orders.length;
         const wishCount = this.props.wishes.length;
@@ -16,9 +12,11 @@ class CartPage extends React.Component {
         let checkoutOverview = <div></div>;
         let paybutton = <div></div>;
 
+        // Only render certain components if the number of items in cart (order.length) is less than a certain threshold
         if (orderCount === 0) {
             orderMsg = <h4>You currently have no buns in your cart.</h4>;
         }
+        // If the cart is not empty, then we calculate the total sum of all the items in the cart and then show the total cost, and the "PAY NOW" button
         else {
             let totalPay = 0;
             for (var i = 0; i < this.props.orders.length; i++) {
@@ -30,6 +28,7 @@ class CartPage extends React.Component {
 
         }
 
+        // Show dialogue for case when the number of wishes in the wishlist is 0
         if (wishCount === 0) {
             wishMsg = <h5>You currently have no items in your wishlist</h5>;
         }

@@ -13,6 +13,7 @@ class NavMenu extends React.Component {
         }
     }
 
+    // Uses the onStateChange function passed from App.js to change pages
   render() { 
       return (
             <div id="BBMenu" className="BBMenuWrapper">

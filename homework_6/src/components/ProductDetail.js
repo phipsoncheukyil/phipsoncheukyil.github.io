@@ -19,18 +19,21 @@ class DetailPage extends React.Component {
         this.SwapElement = this.SwapElement.bind(this);
     }
 
+        // Sets the value of this.state.glaze for Glaze of bun
     SetGlaze(val) {
         this.setState((state, props) => ({
             glaze: val
         }));
     }
 
+        // Sets the value of this.state.amount for Quantity of bun
     SetAmount(val) {
         this.setState((state, props) => ({
             amount: val
         }));
     }
 
+    // Used for carousel to show new item on the page
     SwapElement(newItem) {
         this.setState(() => ({
             product: newItem

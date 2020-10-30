@@ -2,6 +2,7 @@ import React from 'react';
 import "./style.css";
 
 function CartElement (props) {
+    // Render the product passed in the props with an additional Edit and Delete button
     return (
         <div className="BBCartElement">
             <div id={props.order.product.img} className="BBCartImg"></div>

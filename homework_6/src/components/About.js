@@ -2,11 +2,6 @@ import React from 'react';
 import "./style.css";
 
 class AboutPage extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     render() {
         return (
             <div id="BBContent" className="BBAboutWrapper">
